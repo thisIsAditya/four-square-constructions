@@ -19,7 +19,7 @@
                 <!-- Column 2 Starts -->
                 <div class="col-lg-3 d-flex align-items-center">
                     <div class="search-cols flex-fill p-2 m-1">
-                        <p class="h2 text-center my-3">Choose Address</p>
+                        <p class="h2 text-center mb-3">Choose Address</p>
                         <form action="" class="">
                             <div class="form-group">
                                 <label for="">State</label>
@@ -41,7 +41,7 @@
                 <!-- Column 3 Starts -->
                 <div class="col-lg-3 d-flex align-items-center">
                     <div class="search-cols flex-fill p-2 m-1">
-                        <p class="h2 text-center my-3">Browser Product</p>
+                        <p class="h2 text-center mb-3">Browser Product</p>
                         <form action="" class="">
                             <div class="form-group">
                                 <label for="">Category</label>
@@ -63,9 +63,7 @@
                    <!-- Column 4 starts -->
                    <div class="col-lg-3 d-flex align-items-center">
                     <div class="search-cols flex-fill p-2 m-1 text-center">
-                        <a href="#" >
-                            <img src="img/icons8-search.svg" class="img-fluid" id="search-img-icon">
-                        </a>
+                        <button class="btn btn-success btn-lg pe-5"> <i style="font-size :1rem;" class="fa">&#xf002;</i> SEARCH</button>
                     </div>
                 </div>
                 <!-- Colunm 4 Ends -->
