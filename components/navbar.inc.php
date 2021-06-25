@@ -1,6 +1,8 @@
 <!-- Top Bar Starts -->
 <ul class="nav justify-content-end">
-  <p class="me-auto">Contact Us : help@foursqrconstructions.com | +91 XXXXXXXXXX </p>
+  <li class="navbar-text me-sm-auto mx-sm-2"> 
+    Contact Us : help@foursqrconstructions.com | +91 XXXXXXXXXX
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="index.php">Home</a>
   </li>

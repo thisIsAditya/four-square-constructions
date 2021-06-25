@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Four Square Constructions | Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap Integration -->
@@ -10,6 +9,7 @@
     <!-- Bootsrtap Integration Ends-->
     <link rel="stylesheet" href="../css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         .footer-1 {
             background-color: #003566;
@@ -87,4 +87,3 @@
         color: white;
         }
     </style>
-</head>
