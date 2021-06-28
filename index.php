@@ -1,6 +1,7 @@
 <?php include("components/header.inc.php"); ?>
 <title>Four Square Constructions | Home</title>
 </head>
+
 <body>
     <?php include("components/navbar.inc.php"); ?>
     <section class="search py-5">

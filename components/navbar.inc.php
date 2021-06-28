@@ -1,19 +1,19 @@
 <!-- Top Bar Starts -->
 <ul class="nav justify-content-end">
-  <li class="navbar-text me-sm-auto mx-sm-2"> 
+  <li class="navbar-text  nav-item me-sm-auto mx-sm-2 "> 
     Contact Us : help@foursqrconstructions.com | +91 XXXXXXXXXX
   </li>
   <li class="nav-item">
     <a class="nav-link" href="index.php">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">About Us</a>
+    <a class="nav-link" href="about.php">About Us</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Contact us</a>
+    <a class="nav-link" href="contact.php">Contact us</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Privacy Policy</a>
+    <a class="nav-link" href="privacypolicy.php">Privacy Policy</a>
   </li>
 </ul>
 
