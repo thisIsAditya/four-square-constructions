@@ -84,7 +84,7 @@
             </div>
 
             <div class="row justify-content-evenly m-1">
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/bricks.jpg" class="card-img-top img-thumbnail" alt="...">
@@ -97,7 +97,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6 ">
+                <div class="col-md-4 col-lg-2 col-sm-6 ">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/cement.jpg" class="card-img-top img-thumbnail" alt="...">
@@ -110,7 +110,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/ironrod.jpeg" class="card-img-top img-thumbnail" alt="...">
@@ -122,7 +122,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/sand.jpg" class="card-img-top img-thumbnail" alt="...">
@@ -135,7 +135,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/granite.jpeg" class="card-img-top img-thumbnail" alt="...">
@@ -148,7 +148,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/tiles.jpg" class="card-img-top img-thumbnail" alt="...">
