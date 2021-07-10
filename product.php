@@ -33,9 +33,26 @@
                 </div>
                 <div class="col-lg-6">
                     <!-- Product Info here -->
-                    <p class="h3 text-underline fw-bold">Product Heading</p><br>
-
-                    <p class="h7">Price : Rs 150 / Unit</p>
+                    <div class="mx-4">
+                        <p class="h3 text-underline fw-bold py-4 mt-3">Product Heading</p>
+                    </div> 
+                    <div class="mx-4">
+                        <p class="h6 py-4 text-danger fw-bold ">Price : Rs 150 / Unit</p>
+                    </div>
+                    <div class="mx-4">
+                        <p class="h7">
+                        <strong class="h4 fw-bold">Description</strong>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus beatae suscipit omnis animi cumque, quis natus vel commodi libero illum, veniam officiis maxime sequi at inventore delectus quisquam aliquid maiores.</p>
+                        </p>
+                    </div>
+                    <div class="row mx-3 py-3">
+                        <div class="col-lg-3 my-2">
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                        <div class="col-lg-3 my-2">
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
