@@ -1,4 +1,7 @@
 <?php include("components/header.inc.php"); ?>
+<title>Four Square Constructions | Home</title>
+</head>
+
 <body>
     <?php include("components/navbar.inc.php"); ?>
     <section class="search py-5">
@@ -81,7 +84,7 @@
             </div>
 
             <div class="row justify-content-evenly m-1">
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/bricks.jpg" class="card-img-top img-thumbnail" alt="...">
@@ -94,7 +97,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6 ">
+                <div class="col-md-4 col-lg-2 col-sm-6 ">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/cement.jpg" class="card-img-top img-thumbnail" alt="...">
@@ -107,7 +110,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/ironrod.jpeg" class="card-img-top img-thumbnail" alt="...">
@@ -119,7 +122,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/sand.jpg" class="card-img-top img-thumbnail" alt="...">
@@ -132,7 +135,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/granite.jpeg" class="card-img-top img-thumbnail" alt="...">
@@ -145,7 +148,7 @@
                 </div>
 
 
-                <div class="col-md-4 col-lg-2 col-6">
+                <div class="col-md-4 col-lg-2 col-sm-6">
                     <div class="products mx-1 my-1 text-center">
                         <div class="card" style="width: 90%;">
                         <img src="img/tiles.jpg" class="card-img-top img-thumbnail" alt="...">
@@ -162,5 +165,12 @@
 <?php include("components/footer.inc.php"); ?>
 <!-- Bootstrap Javascript-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <!-- jQuery library -->
+  <script src="js/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="js/popper.min.js"></script>
+  <!--Ajax-->
+  <script type="text/javascript" src="js/ajaxrequest.js"></script>
 </body>
 </html>
