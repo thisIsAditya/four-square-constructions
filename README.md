@@ -14,3 +14,4 @@ Required Pages :
 All the important components like "html head", "navbar", "footer" are available in Components folder.
 
 !IMP : Create a 'your_name.css' in css folders and add any other css in that file to avoid merge conflict.
+>>>>>>> static-pages
