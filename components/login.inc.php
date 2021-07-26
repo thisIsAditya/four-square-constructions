@@ -11,32 +11,23 @@
         <div class="container-fluid">
           <div class="row">
               <div class="col">
-                  <form action="">
-                    <div class="form-group d-flex justify-content-evenly m-4">
-                      <label for="usertype">Select Login Type</label>
-                      <div>
-                      <input type="radio" name="usertype" value="buyer">
-                      <label for="usertype">Buyer</label>
-                      </div>
-
-                      <div>
-                      <input type="radio" name="usertype" value="seller">
-                      <label for="usertype">Seller</label>
-                      </div>
-
-                      <div>
-                      <input type="radio" name="usertype" value="admin">
-                      <label for="usertype">Admin</label>
-                      </div>
+                  <form id="loginForm">
+                  <div class="form-group m-4">
+                      <label for="logUsertype">User Type : </label>
+                      <select name="logUsertype" id="logUsertype" class="form-control">
+                        <option value="buyer">Buyer</option>
+                        <option value="seller">Seller</option>
+                        <option value="admin">Admin</option>
+                      </select>
                     </div>
 
                     <div class="form-group m-4">
-                        <label for="">E-mail</label>
-                        <input type="text" class="form-control">
+                        <label for="logEmail">E-mail</label>
+                        <input type="text" class="form-control" name="logEmail" id="logEmail">
                     </div>
                     <div class="form-group m-4">
-                        <label for="">Password</label>
-                        <input type="text" class="form-control">
+                        <label for="logPassword">Password</label>
+                        <input type="password" class="form-control" name="logPassword" id="logPassword">
                     </div>
                   </form>
               </div>
@@ -45,7 +36,8 @@
       </div>
 
       <div class="modal-footer">
-        <button type=="button" class="btn btn-primary">Login</button>
+        <small id ="statusLogMsg"></small>
+        <button type="button" class="btn btn-primary" onclick="loginCustomer()" id="loginBtn">Login</button>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"  data-bs-dismiss="modal">Register Here!</button>
       </div>
 
@@ -68,31 +60,35 @@
         <div class="container-fluid">
           <div class="row">
               <div class="col">
-                  <form action="">                    
+                  <form id="RegForm">                    
                     <div class="form-group m-4">
                       <label for="usertype">User Type : </label>
-                      <select name="" id="" class="form-control">
+                      <select name="usertype" id="usertype" class="form-control">
                         <option value="buyer">Buyer</option>
                         <option value="seller">Seller</option>
                       </select>
                     </div>
                     <div class="form-group m-4">
                         <label for="">First Name</label>
-                        <input type="text" class="form-control">
+                        <small id="statusMsg1"></small>
+                        <input type="text" class="form-control" name="fname" id="fname">
                     </div>
 
                     <div class="form-group m-4">
                         <label for="">Last Name</label>
-                        <input type="text" class="form-control">
+                        <small id="statusMsg2"></small>
+                        <input type="text" class="form-control" name="lname" id="lname">
                     </div>
 
                     <div class="form-group m-4">
                         <label for="">E-mail</label>
-                        <input type="email" class="form-control">
+                        <small id="statusMsg3"></small>
+                        <input type="email" class="form-control" name="email" id="email">
                     </div>
                     <div class="form-group m-4">
                         <label for="">Password</label>
-                        <input type="password" class="form-control">
+                        <small id="statusMsg4"></small>
+                        <input type="password" class="form-control" name="password" id="password">
                     </div>
                   </form>
               </div>
@@ -101,7 +97,8 @@
       </div>
 
       <div class="modal-footer">
-        <button type=="button" class="btn btn-primary">Register</button>
+        <span id="successMsg"></span>
+        <button type="button" class="btn btn-primary" onclick="addCustomer()" id="regBtn">Register</button>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"  data-bs-dismiss="modal">Login Here!</button>        
       </div>
 
