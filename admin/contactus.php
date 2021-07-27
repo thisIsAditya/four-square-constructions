@@ -22,6 +22,5 @@
 <!-- Body Ends -->
 
 <?php include("dashboard/footer.inc.php") ?>
-
 </body>
 </html>
