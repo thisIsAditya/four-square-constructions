@@ -1,10 +1,10 @@
-
-<?php
+<?php 
 include("dashboard/session.inc.php");
-include_once('../dbconnection.php');
 include("dashboard/header.inc.php");
 include("dashboard/sidepane.inc.php");
+include_once('../dbconnection.php');
 ?>
+
 
 
   <!-- Body Starts -->
