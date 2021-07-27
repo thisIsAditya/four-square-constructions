@@ -17,7 +17,7 @@
       <?php
       if(isset($_SESSION['buyerEmail']) )
       {
-        echo'<a href="buyer/dashboard.php"
+        echo'<a href="buyer/index.php"
         <button type="button" class="btn btn-success" >
             My Profile
           </button></a>';
@@ -25,14 +25,14 @@
       }
       else if(isset($_SESSION['sellerEmail']) )
       {
-        echo'<a href="seller/dashboard.php"
+        echo'<a href="seller/index.php"
         <button type="button" class="btn btn-success" >
             My Profile
           </button></a>';
       }
       else
       {
-        echo'<a href="admin/dashboard.php"
+        echo'<a href="admin/index.php"
         <button type="button" class="btn btn-success" >
             My Profile
           </button></a>';
