@@ -15,8 +15,34 @@
           </button>
         </div>
       </div>
-      
-    </main>
+
+      <table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td><button type="submit" class="btn btn-secondary" name="view" value="View"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+      <button type="submit" class="btn btn-secondary" name="view" value="View"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<a class="btn btn-primary box" href="addproducts.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
+
+
+
+
+</main>
 
   </div>
 </div>

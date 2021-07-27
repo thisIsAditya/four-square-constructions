@@ -1,7 +1,7 @@
 <?php
 $db_host= "localhost";
 $db_user= "root";
-$db_password= "asdfghjkl456";
+$db_password= "";
 $db_name= "constructionsolution";
 
 //connection
