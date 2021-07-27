@@ -13,13 +13,13 @@
           <li class="nav-item">
             <a class="nav-link" href="seller.php">
               <span data-feather="file"></span>
-              Seller List
+              Seller
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="buyer.php">
               <span data-feather="shopping-cart"></span>
-              Buyer List
+              Buyer
             </a>
           </li>
           <li class="nav-item">
@@ -49,7 +49,7 @@
           <li class="nav-item">
             <a class="nav-link" href="contactus.php">
               <span data-feather="layers"></span>
-              Contact List
+              Contact
             </a>
           </li>
           <li class="nav-item">
