@@ -21,6 +21,6 @@
 </div>
 <!-- Body Ends -->
 
-<?php include("../components/footer.inc.php") ?>
+<?php include("dashboard/footer.inc.php") ?>
 </body>
 </html>
