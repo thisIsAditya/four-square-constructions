@@ -60,10 +60,10 @@ if (isset($_REQUEST['productSubmitBtn'])) {
       <!-- Body content starts -->
       <div class="container-fluid">
         <div class="row">
-          <div class="my-4 mx-3">
-            <div class="col-lg-8">
+          <div class="col-lg-6">
+            <div class="my-4 mx-3">
               <form action="" method="POST" enctype="multipart/form-data">
-               <h3 class="text-center">Add New Product</h3>
+                <h3 class="text-center">Add New Product</h3>
                 <div class="form-group mb-3">
                   <label for="pr_name">Products Name</label>
                   <input type="text" class="form-control" id="pr_name" name="pr_name">
