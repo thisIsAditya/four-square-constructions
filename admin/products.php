@@ -49,7 +49,7 @@ include_once('../dbconnection.php');
         
       <form method="POST" class="d-inline" action="editproduct.php">
                   <input type="hidden" name="id" value="<?php echo $row['pr_id'] ?>">
-                  <button type="submit" class="btn btn-secondary" name="view" value="View"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                  <button type="submit" class="btn btn-secondary" name="view" value="view"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                 </form>
                 <form method="POST" class="d-inline" action="">
                   <input type="hidden" name="id" value=' <?php echo $row["pr_id"] ?> '>
