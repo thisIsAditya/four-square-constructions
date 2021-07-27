@@ -44,7 +44,7 @@ if (isset($_REQUEST['productSubmitBtn'])) {
 <!-- Body Starts -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Admin Dashboard</h1>
+        <h1 class="h2">Add Product</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -63,7 +63,6 @@ if (isset($_REQUEST['productSubmitBtn'])) {
           <div class="col-lg-6">
             <div class="my-4 mx-3">
               <form action="" method="POST" enctype="multipart/form-data">
-                <h3 class="text-center">Add New Product</h3>
                 <div class="form-group mb-3">
                   <label for="pr_name">Products Name</label>
                   <input type="text" class="form-control" id="pr_name" name="pr_name">
