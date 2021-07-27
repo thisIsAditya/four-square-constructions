@@ -19,7 +19,7 @@
       <!-- Body content starts -->
       <div class="container-fluid">
         <div class="row">
-          <div class="mt-5 mx-3">
+          <div class="my-4 mx-3">
             <div class="col-lg-8">
               <form action="" method="POST" enctype="multipart/form-data">
                <h3 class="text-center">Add New Product</h3>
@@ -73,6 +73,6 @@
 </div>
 <!-- Body Ends -->
 
-<?php include("../components/footer.inc.php") ?>
+<?php include("dashboard/footer.inc.php") ?>
 </body>
 </html>
