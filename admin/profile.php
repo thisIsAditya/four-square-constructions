@@ -40,24 +40,20 @@ include("dashboard/sidepane.inc.php");
             <div class="m-2 p-2">
               <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form-group mb-3">
-                  <label for="product_name">Products Name</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name">
+                  <label for="product_name">Name</label>
+                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="">
                 </div>
                 <div class="form-group mb-3">
-                  <label for="product_desc">Products Description</label>
-                  <textarea type="text" class="form-control" id="product_desc" name="product_desc" row="2"></textarea>
-                </div>
-                <div class="form-group mb-3">
-                  <label for="product_quantity">Products Quantity</label>
+                  <label for="product_quantity">E-mail</label>
                   <input type="text" class="form-control" id="product_quantity" name="product_quantity">
                 </div>
                 <div class="form-group mb-3">
-                  <label for="product_unit">Products Unit</label>
+                  <label for="product_unit">Address</label>
                   <input type="text" class="form-control" id="product_unit" name="product_unit">
                 </div>
 
                 <div class="form-group mb-3">
-                  <label for="product_origional_price">Products Origional Price</label>
+                  <label for="product_origional_price">Phone Number</label>
                   <input type="text" class="form-control" id="product_origional_price" name="product_origional_price">
                 </div>
                 <div class="form-group mb-3">
