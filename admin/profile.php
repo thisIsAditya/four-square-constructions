@@ -2,6 +2,34 @@
 include("dashboard/session.inc.php");
 include("dashboard/header.inc.php");
 include("dashboard/sidepane.inc.php");
+include_once('../dbconnection.php');
+if (isset($_REQUEST['productUpdateBtn'])) {
+  //checking for empty feild
+  // echo "clicked";
+  if (($_REQUEST['pr_name'] == "") || ($_REQUEST['pr_desc'] == "") || ($_REQUEST['pr_quantity'] == "") || ($_REQUEST['pr_unit'] == "") || ($_REQUEST['pr_origionalprice'] == "") || ($_REQUEST['pr_sellingprice'] == "") || ($_REQUEST['pr_brand'] == "")) {
+    $msg = ' <div class="alert alert-warning col-sm-6 ml-5 mt-2">All Fields Are Required....!</div> ';
+  } 
+  else {
+    $pr_name = $_REQUEST['pr_name'];
+    $pr_desc = $_REQUEST['pr_desc'];
+    $pr_quantity = $_REQUEST['pr_quantity'];
+    $pr_unit = $_REQUEST['pr_unit'];
+    $pr_origionalprice = $_REQUEST['pr_origionalprice'];
+    $pr_sellingprice = $_REQUEST['pr_sellingprice'];
+    $pr_brand = $_REQUEST['pr_brand'];
+    $pr_img = '../image/productimg/' . $_FILES['pr_img']['name'];
+
+    $sql = "UPDATE product SET pr_id='$pr_id',pr_name='$pr_name',pr_desc='$pr_desc',pr_quantity='$pr_quantity',pr_img='$pr_img',pr_unit='$pr_unit',pr_sellingprice='$pr_sellingprice',pr_origionalprice='$pr_origionalprice'
+    pr_brand='$pr_brand'
+    WHERE pr_id = '$pr_id'";
+    if ($conn->query($sql) == TRUE) {
+      $msg = ' <div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert">pr Updated Successfully....!</div> ';
+    } 
+    else {
+      $msg = ' <div class="alert alert-danger col-sm-6 ml-5 mt-2" role="alert">Unable to update....!</div> ';
+    }
+  }
+}
 ?>
 <!-- Body Starts -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
