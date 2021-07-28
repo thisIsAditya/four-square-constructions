@@ -6,31 +6,32 @@ include_once('../dbconnection.php');
 if (isset($_REQUEST['productUpdateBtn'])) {
   //checking for empty feild
   // echo "clicked";
-  if (($_REQUEST['pr_name'] == "") || ($_REQUEST['pr_desc'] == "") || ($_REQUEST['pr_quantity'] == "") || ($_REQUEST['pr_unit'] == "") || ($_REQUEST['pr_origionalprice'] == "") || ($_REQUEST['pr_sellingprice'] == "") || ($_REQUEST['pr_brand'] == "")) {
-  $msg = ' <div class="alert alert-warning col-sm-6 ml-5 mt-2">All Fields Are Required....!</div> ';
-  } else {
+  if (($_REQUEST['pr_name'] == "") || ($_REQUEST['pr_desc'] == "") || ($_REQUEST['pr_quantity'] == "") || ($_REQUEST['pr_unit'] == "") || ($_REQUEST['pr_origionalprice'] == "") || ($_REQUEST['pr_sellingprice'] == "")) {
+    $msg = ' <div class="alert alert-warning col-sm-6 ml-5 mt-2">All Fields Are Required....!</div> ';
+  } 
+  else {
+    $pr_id=$_REQUEST['pr_id'];
     $pr_name = $_REQUEST['pr_name'];
     $pr_desc = $_REQUEST['pr_desc'];
     $pr_quantity = $_REQUEST['pr_quantity'];
     $pr_unit = $_REQUEST['pr_unit'];
     $pr_origionalprice = $_REQUEST['pr_origionalprice'];
     $pr_sellingprice = $_REQUEST['pr_sellingprice'];
-    $pr_brand = $_REQUEST['pr_brand'];
-  $pr_img = '../image/productimg/' . $_FILES['pr_img']['name'];
+    // $pr_brand = $_REQUEST['pr_brand'];
+    // $pr_img = '../img/productimg/' . $_FILES['pr_img']['name'];
 
-  $sql = "UPDATE product SET pr_id='$pr_id',pr_name='$pr_name',pr_desc='$pr_desc',pr_quantity='$pr_quantity',pr_img='$pr_img',pr_unit='$pr_unit',pr_sellingprice='$pr_sellingprice',pr_origionalprice='$pr_origionalprice'
-  pr_brand='$pr_brand'
-  WHERE pr_id = '$pr_id'";
-  if ($conn->query($sql) == TRUE) {
-  $msg = ' <div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert">pr Updated Successfully....!</div> ';
-  } else {
-  $msg = ' <div class="alert alert-danger col-sm-6 ml-5 mt-2" role="alert">Unable to update....!</div> ';
+    $sql = "UPDATE products SET pr_id= '$pr_id',pr_name='$pr_name',pr_desc='$pr_desc',pr_quantity='$pr_quantity',pr_unit='$pr_unit',pr_sellingprice='$pr_sellingprice',pr_origionalprice='$pr_origionalprice'
+    WHERE pr_id = '$pr_id'";
+    // echo $sql;
+    if ($conn->query($sql) == TRUE) {
+      $msg = ' <div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert">Updated Successfully....!</div> ';
+    } 
+    else {
+      $msg = ' <div class="alert alert-danger col-sm-6 ml-5 mt-2" role="alert">Unable to update....!</div> ';
+    }
   }
-  }
-  }
-
-
-  ?>
+}
+?>
 
 <!-- Body Starts -->
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -48,12 +49,11 @@ if (isset($_REQUEST['productUpdateBtn'])) {
         </div>
       </div>
       <?php
-            if (isset($_REQUEST['view'])) {
+    if (isset($_REQUEST['view'])) {
       $sql = "SELECT * FROM products WHERE  pr_id = {$_REQUEST['id']}";
       $result = $conn->query($sql);
       $row = $result->fetch_assoc();
     }
-
     ?>
 
       <!-- Body content starts -->
@@ -76,32 +76,40 @@ if (isset($_REQUEST['productUpdateBtn'])) {
             <div class="m-2 p-2">
   
               <form action="" method="POST" enctype="multipart/form-data">
+
+              <div class="form-group mb-3">
+                  <label for="pr_id">Products ID</label>
+                  <input type="text" class="form-control" id="pr_id" name="pr_id" value="<?php if (isset($row['pr_id'])) {
+                    echo $row['pr_id'];
+                  } ?>" readonly>
+                </div>
+
                 <div class="form-group mb-3">
                   <label for="product_name">Products Name</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name" value="<?php if (isset($row['pr_name'])) {
-                                                                                              echo $row['pr_name'];
-                                                                                            } ?>">
+                  <input type="text" class="form-control" id="pr_name" name="pr_name" value="<?php if (isset($row['pr_name'])) {
+                    echo $row['pr_name'];
+                  } ?>">
                 </div>
                 <div class="form-group mb-3">
                   <label for="product_desc">Products Description</label>
-                  <textarea type="text" class="form-control" id="product_desc" name="product_desc" row="2" value=""><?php if(isset($row['pr_desc'])){echo $row['pr_desc'];} ?></textarea>
+                  <textarea type="text" class="form-control" id="pr_desc" name="pr_desc" row="2" value=""><?php if(isset($row['pr_desc'])){echo $row['pr_desc'];} ?></textarea>
                 </div>
                 <div class="form-group mb-3">
                   <label for="product_quantity">Products Quantity</label>
-                  <input type="text" class="form-control" id="product_quantity" name="product_quantity" value="<?php if(isset($row['pr_quantity'])){echo $row['pr_quantity'];} ?>">
+                  <input type="text" class="form-control" id="pr_quantity" name="pr_quantity" value="<?php if(isset($row['pr_quantity'])){echo $row['pr_quantity'];} ?>">
                 </div>
                 <div class="form-group mb-3">
                   <label for="product_unit">Products Unit</label>
-                  <input type="text" class="form-control" id="product_unit" name="product_unit" value="<?php if(isset($row['pr_unit'])){echo $row['pr_unit'];} ?>"> 
+                  <input type="text" class="form-control" id="pr_unit" name="pr_unit" value="<?php if(isset($row['pr_unit'])){echo $row['pr_unit'];} ?>"> 
                 </div>
 
                 <div class="form-group mb-3">
                   <label for="product_origional_price">Products Origional Price</label>
-                  <input type="text" class="form-control" id="product_origional_price" name="product_origional_price" value="<?php if(isset($row['pr_origionalprice'])){echo $row['pr_origionalprice'];} ?>">
+                  <input type="text" class="form-control" id="pr_origionalprice" name="pr_origionalprice" value="<?php if(isset($row['pr_origionalprice'])){echo $row['pr_origionalprice'];} ?>">
                 </div>
                 <div class="form-group mb-3">
                   <label for="product_price">Products Selling Price</label>
-                  <input type="text" class="form-control" id="product_price" name="product_price" value="<?php if(isset($row['pr_sellingprice'])){echo $row['pr_sellingprice'];} ?>">
+                  <input type="text" class="form-control" id="pr_sellingprice" name="pr_sellingprice" value="<?php if(isset($row['pr_sellingprice'])){echo $row['pr_sellingprice'];} ?>">
                 </div>
               
                 <div class="text_center my-3">
@@ -110,8 +118,10 @@ if (isset($_REQUEST['productUpdateBtn'])) {
                 </div>
                 <?php
                 if (isset($msg)) {
-                echo $msg;
-                  }
+                  echo $msg;
+                  echo "<script>window.location.href='products.php';</script>";
+
+                }
                 ?>
               </form>
             </div>

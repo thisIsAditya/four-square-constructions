@@ -1,30 +1,29 @@
 <?php 
 include("dashboard/session.inc.php");
+include_once('../dbconnection.php');
 include("dashboard/header.inc.php");
 include("dashboard/sidepane.inc.php");
-include_once('../dbconnection.php');
-if (isset($_REQUEST['productUpdateBtn'])) {
+if (isset($_REQUEST['profileSubmitBtn'])) {
   //checking for empty feild
-  // echo "clicked";
-  if (($_REQUEST['pr_name'] == "") || ($_REQUEST['pr_desc'] == "") || ($_REQUEST['pr_quantity'] == "") || ($_REQUEST['pr_unit'] == "") || ($_REQUEST['pr_origionalprice'] == "") || ($_REQUEST['pr_sellingprice'] == "") || ($_REQUEST['pr_brand'] == "")) {
+  //echo "clicked";
+  if (($_REQUEST['admin_id'] == "") || ($_REQUEST['admin_fname'] == "") || ($_REQUEST['admin_number'] == "")  || ($_REQUEST['admin_email'] == "")) {
     $msg = ' <div class="alert alert-warning col-sm-6 ml-5 mt-2">All Fields Are Required....!</div> ';
   } 
   else {
-    $pr_name = $_REQUEST['pr_name'];
-    $pr_desc = $_REQUEST['pr_desc'];
-    $pr_quantity = $_REQUEST['pr_quantity'];
-    $pr_unit = $_REQUEST['pr_unit'];
-    $pr_origionalprice = $_REQUEST['pr_origionalprice'];
-    $pr_sellingprice = $_REQUEST['pr_sellingprice'];
-    $pr_brand = $_REQUEST['pr_brand'];
-    $pr_img = '../image/productimg/' . $_FILES['pr_img']['name'];
+    $admin_id = $_REQUEST['admin_id'];
+    $admin_fname = $_REQUEST['admin_fname'];
+    $admin_lname = $_REQUEST['admin_lname'];
+    // $admin_address = $_REQUEST['admin_address'];
+    $admin_number = $_REQUEST['admin_number'];
+    $admin_email = $_REQUEST['admin_email'];
+    // $admin_img = '../image/adminprofileimg/' . $_FILES['admin_img']['name'];
 
-    $sql = "UPDATE product SET pr_id='$pr_id',pr_name='$pr_name',pr_desc='$pr_desc',pr_quantity='$pr_quantity',pr_img='$pr_img',pr_unit='$pr_unit',pr_sellingprice='$pr_sellingprice',pr_origionalprice='$pr_origionalprice'
-    pr_brand='$pr_brand'
-    WHERE pr_id = '$pr_id'";
-    if ($conn->query($sql) == TRUE) {
-      $msg = ' <div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert">pr Updated Successfully....!</div> ';
-    } 
+    $sql = "UPDATE administration SET admin_id = '$admin_id',admin_fname='$admin_fname',admin_lname='$admin_lname',admin_number='$admin_number',admin_email='$admin_email' WHERE admin_id = '$admin_id' ";
+    echo $sql;
+    // $result = $conn->query($sql);
+    if ($result == TRUE) {
+      $msg = ' <div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert">Updated Successfully....!</div> ';
+    }   
     else {
       $msg = ' <div class="alert alert-danger col-sm-6 ml-5 mt-2" role="alert">Unable to update....!</div> ';
     }
@@ -46,21 +45,26 @@ if (isset($_REQUEST['productUpdateBtn'])) {
           </button>
         </div>
       </div>
-
+      <!-- Fetching Data to display -->
+      <?php
+      $sql = "SELECT * FROM administration WHERE admin_email = '{$_SESSION['adminEmail']}'";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      ?>
+      <!-- Fetching data ends -->
       <!-- Body content starts -->
       <div class="container-fluid">
         <div class="row">
-
           <div class="col-md-3">
             <div class="m-3 p 2">
-              <img src="../img/demoprofilepic.png" class="img-thumbnail rounded-circle" alt="Profile Picture">
+              <img src="<?php if(isset($row['admin_img'])){echo $row['admin_img'];} ?>" class="img-thumbnail rounded-circle" alt="Profile Picture">
             </div>
           </div>
           
           <div class="col-md-9 d-flex align-items-center">
             <div class="m-3 p-2">
-              <p class="h2"><strong>Aditya Pandey</strong></p>
-              <p class="h4 text-muted">pandey.api2k@gmail.com</p>
+              <p class="h2"><strong><?php if(isset($row['admin_fname'])){echo ($row['admin_fname'] ." " . $row['admin_lname']);} ?></strong></p>
+              <p class="h4 text-muted"><?php if(isset($row['admin_email'])){echo $row['admin_email'];} ?></p>
             </div>
           </div>
 
@@ -68,39 +72,37 @@ if (isset($_REQUEST['productUpdateBtn'])) {
             <div class="m-2 p-2">
               <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form-group mb-3">
-                  <label for="product_name">Name</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="">
+                  <label for="admin_name">ID</label>
+                  <input type="text" class="form-control" id="admin_id" name="admin_id" placeholder="" value="<?php if(isset($row['admin_id'])){echo $row['admin_id'];} ?>" readonly>
                 </div>
                 <div class="form-group mb-3">
-                  <label for="product_quantity">E-mail</label>
-                  <input type="text" class="form-control" id="product_quantity" name="product_quantity">
+                  <label for="admin_name">Name</label>
+                  <input type="text" class="form-control" id="admin_fname" name="admin_fname" placeholder="" value="<?php if(isset($row['admin_fname'])){echo $row['admin_fname'];} ?>">
+                  <input type="text" class="form-control" id="admin_lname" name="admin_lname" placeholder="" value="<?php if(isset($row['admin_lname'])){echo $row['admin_lname'];} ?>">
                 </div>
                 <div class="form-group mb-3">
-                  <label for="product_unit">Address</label>
-                  <input type="text" class="form-control" id="product_unit" name="product_unit">
+                  <label for="admin_quantity">E-mail</label>
+                  <input type="text" class="form-control" id="admin_email" name="admin_email" value="<?php if(isset($row['admin_email'])){echo $row['admin_email'];} ?>" readonly>
                 </div>
+                <!-- <div class="form-group mb-3">
+                  <label for="admin_unit">Address</label>
+                  <textarea type="text" class="form-control" id="admin_address" name="admin_address"><?php if(isset($row['admin_address'])){echo $row['admin_address'];}?></textarea>
+                </div> -->
 
                 <div class="form-group mb-3">
-                  <label for="product_origional_price">Phone Number</label>
-                  <input type="text" class="form-control" id="product_origional_price" name="product_origional_price">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="product_price">Products Selling Price</label>
-                  <input type="text" class="form-control" id="product_price" name="product_price">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="product_brand">Products Brand</label>
-                  <input type="text" class="form-control" id="product_brand" name="product_brand">
+                  <label for="admin_origional_price">Phone Number</label>
+                  <input type="text" class="form-control" id="admin_number" name="admin_number" value="<?php if(isset($row['admin_number'])){echo $row['admin_number'];} ?>">
                 </div>
                 <div class="form-group my-5">
-                  <label for="product_img">Products Image</label>
-                  <input type="file" class="form-control-file" id="product_img" name="product_img">
+                  <label for="admin_img">Products Image</label>
+                  <input type="file" class="form-control-file" id="admin_img" name="admin_img">
                 </div>
 
                 <div class="text_center my-3">
-                  <button type="submit" class="btn btn-danger" id="productSubmitBtn" name="productSubmitBtn">Submit</button>
-                  <a href="products.php" class="btn btn-secondary">Close</a>
+                  <button type="submit" class="btn btn-danger" id="profileSubmitBtn" name="profileSubmitBtn">Submit</button>
+                  <a href="profile.php" class="btn btn-secondary">Close</a>
                 </div>
+                <?php echo $msg; ?>
               </form>
             </div>
           </div>
