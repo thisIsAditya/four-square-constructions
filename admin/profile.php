@@ -1,8 +1,8 @@
 <?php 
 include("dashboard/session.inc.php");
-include_once('../dbconnection.php');
 include("dashboard/header.inc.php");
 include("dashboard/sidepane.inc.php");
+include_once('../dbconnection.php');
 if (isset($_REQUEST['profileSubmitBtn'])) {
   //checking for empty feild
   //echo "clicked";
@@ -16,12 +16,17 @@ if (isset($_REQUEST['profileSubmitBtn'])) {
     // $admin_address = $_REQUEST['admin_address'];
     $admin_number = $_REQUEST['admin_number'];
     $admin_email = $_REQUEST['admin_email'];
-    // $admin_img = '../image/adminprofileimg/' . $_FILES['admin_img']['name'];
+    //uploading image
+    $admin_img = $_FILES['admin_img']['name'];
+    $admin_img_temp = $_FILES['admin_img']['tmp_name'];
+    // echo $admin_img_temp;
+    $img_folder = "../image/adminprofileimg/" . $admin_img;
+    move_uploaded_file($admin_img_temp, $img_folder);
 
-    $sql = "UPDATE administration SET admin_id = '$admin_id',admin_fname='$admin_fname',admin_lname='$admin_lname',admin_number='$admin_number',admin_email='$admin_email' WHERE admin_id = '$admin_id' ";
-    echo $sql;
+    $sql = "UPDATE administration SET admin_id='$admin_id',admin_fname='$admin_fname',admin_lname='$admin_lname',admin_number='$admin_number',admin_email='$admin_email', admin_img='$img_folder' WHERE admin_id = '$admin_id' ";
+      // echo $sql;
     // $result = $conn->query($sql);
-    if ($result == TRUE) {
+    if ($conn->query($sql) == TRUE) {
       $msg = ' <div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert">Updated Successfully....!</div> ';
     }   
     else {
@@ -86,7 +91,7 @@ if (isset($_REQUEST['profileSubmitBtn'])) {
                 </div>
                 <!-- <div class="form-group mb-3">
                   <label for="admin_unit">Address</label>
-                  <textarea type="text" class="form-control" id="admin_address" name="admin_address"><?php if(isset($row['admin_address'])){echo $row['admin_address'];}?></textarea>
+                  <textarea type="text" class="form-control" id="admin_address" name="admin_address"></textarea>
                 </div> -->
 
                 <div class="form-group mb-3">
@@ -94,7 +99,7 @@ if (isset($_REQUEST['profileSubmitBtn'])) {
                   <input type="text" class="form-control" id="admin_number" name="admin_number" value="<?php if(isset($row['admin_number'])){echo $row['admin_number'];} ?>">
                 </div>
                 <div class="form-group my-5">
-                  <label for="admin_img">Products Image</label>
+                  <label for="admin_img">Profile Image</label>
                   <input type="file" class="form-control-file" id="admin_img" name="admin_img">
                 </div>
 
@@ -102,7 +107,11 @@ if (isset($_REQUEST['profileSubmitBtn'])) {
                   <button type="submit" class="btn btn-danger" id="profileSubmitBtn" name="profileSubmitBtn">Submit</button>
                   <a href="profile.php" class="btn btn-secondary">Close</a>
                 </div>
-                <?php echo $msg; ?>
+                <?php
+                if(isset($msg)) {
+                  echo $msg; 
+                }
+                ?>
               </form>
             </div>
           </div>
