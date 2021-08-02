@@ -1,9 +1,16 @@
 <!-- NavBar Starts -->
-<div class="container-fluid mb-4">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row mb-5">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.php">
+            <i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="profile.php">
             <i class="fa fa-user" aria-hidden="true"></i>&nbsp;

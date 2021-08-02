@@ -22,11 +22,13 @@
         .footer-box{
             color : #fff;
         }
-        .footer-box p{
-            border:3px solid white;
+        
+        footer ul a{
+            text-decoration:none;
+            color:#fff;
         }
-        .footer-logo{
-            border:4px solid white;
+        footer ul{
+            list-style-type:none;
         }
 
         .products img{

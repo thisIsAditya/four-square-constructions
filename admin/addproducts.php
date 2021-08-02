@@ -6,7 +6,6 @@ if (!(isset($_SESSION['is_login']) && isset($_SESSION['adminEmail']))) {
   header('location:../index.php');
 }
 
-
 include_once('../dbconnection.php');
 include("dashboard/header.inc.php");
 include("dashboard/sidepane.inc.php"); 
@@ -22,6 +21,7 @@ if (isset($_REQUEST['productSubmitBtn'])) {
     $pr_origionalprice = $_REQUEST['pr_origionalprice'];
     $pr_sellingprice = $_REQUEST['pr_sellingprice'];
     $pr_brand = $_REQUEST['pr_brand'];
+    $cat_id=$_REQUEST['cat_id'];
 
     //uploading image
     $pr_img = $_FILES['pr_img']['name'];
@@ -29,8 +29,8 @@ if (isset($_REQUEST['productSubmitBtn'])) {
     $img_folder = "../image/productimg/" . $pr_img;
     move_uploaded_file($pr_img_temp, $img_folder);
 
-    $sql = " INSERT INTO products(pr_name, pr_desc, pr_quantity, pr_img, pr_unit, pr_sellingprice, pr_origionalprice, pr_brand) 
-  VALUES ('$pr_name','$pr_desc','$pr_quantity','$img_folder','$pr_unit','$pr_sellingprice','$pr_origionalprice','$pr_brand') ";
+    $sql = " INSERT INTO products(pr_name, pr_desc, pr_quantity, pr_img, pr_unit, pr_sellingprice, pr_origionalprice, pr_brand, cat_id,se_id)
+  VALUES ('$pr_name','$pr_desc','$pr_quantity','$img_folder','$pr_unit','$pr_sellingprice','$pr_origionalprice','$pr_brand','$cat_id','$se_id') ";
 
     if ($conn->query($sql) == TRUE) {
       $msg = ' <div class="alert alert-success col-sm-6 ml-5 mt-2">product Added Successfully....!</div> ';
@@ -92,6 +92,23 @@ if (isset($_REQUEST['productSubmitBtn'])) {
                   <label for="pr_brand">Products Brand</label>
                   <input type="text" class="form-control" id="pr_brand" name="pr_brand">
                 </div>
+
+                <div class="form-group mb-3">
+                <label for="cat_id">Categroy</label>
+                <select name="cat_id" id="cat_id" class="form-control">
+                <!-- <option selected>Open this select menu</option> -->
+                <?php   $sql = "SELECT * FROM categories";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) 
+                {
+                 while ($row = $result->fetch_assoc()) 
+                 {
+                $cat_id = $row['cat_id'];?>
+                <option value="<?php echo $row['cat_id']; ?>"><?php echo $row['cat_name']; ?></option>
+                <?php }}?>
+                </select>
+                </div>
+
                 <div class="form-group my-5">
                   <label for="pr_img">Products Image</label>
                   <input type="file" class="form-control-file" id="pr_img" name="pr_img">

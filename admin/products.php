@@ -13,8 +13,7 @@ include_once('../dbconnection.php');
         <h1 class="h2">Products</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+         <input type="button" class="btn btn-sm btn-outline-secondary" value="Export" onclick="window.print()"></input>
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
@@ -71,6 +70,7 @@ include_once('../dbconnection.php');
     if (isset($_REQUEST['delete'])) {
       unlink($img );
       $sql = " DELETE FROM products WHERE pr_id = {$_REQUEST['id']} ";
+      // echo $sql;
       if ($conn->query($sql) == TRUE) {
         echo '<meta http-equiv="refresh" content="0;URL=?deleted"/>';
       } else {
@@ -79,7 +79,7 @@ include_once('../dbconnection.php');
     }
 
     ?>
-<a class="btn btn-primary box" href="addproducts.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
+<a class="btn btn-primary box mb-5" href="addproducts.php">Add Product&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
 
 
 

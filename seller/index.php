@@ -1,5 +1,8 @@
-<?php include("dashboard/header.inc.php") ?>
-<?php include("dashboard/sidepane.inc.php") ?>
+<?php 
+include("dashboard/session.inc.php");
+include("dashboard/header.inc.php");
+include("dashboard/sidepane.inc.php");
+?>
 <!-- Body Starts -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -14,13 +17,15 @@
             This week
           </button>
         </div>
+      
       </div>
+      
     </main>
 
   </div>
 </div>
 <!-- Body Ends -->
 
-<?php include("../components/footer.inc.php") ?>
+<?php include("dashboard/footer.inc.php") ?>
 </body>
 </html>

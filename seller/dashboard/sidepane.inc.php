@@ -5,49 +5,37 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="profile.php">
+            <i class="fa fa-user" aria-hidden="true"></i>&nbsp;
               <span data-feather="home"></span>
               Profile
             </a>
           </li>
+        
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file"></span>
-              Seller List
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Buyer List
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Categroies 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="products.php">
+              <i class="fa fa-barcode" aria-hidden="true"></i>&nbsp;
               <span data-feather="bar-chart-2"></span>
               Products
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="orders.php">
+              <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;
+              <span data-feather="bar-chart-2"></span>
+              Sell Reports/Orders
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feedback.php">
+              <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;
               <span data-feather="layers"></span>
               Feedback
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              Contact List
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="changepassword.php">
+              <i class="fa fa-key" aria-hidden="true"></i>&nbsp;  
               <span data-feather="layers"></span>
               Change Password
             </a>

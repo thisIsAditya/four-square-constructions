@@ -25,7 +25,7 @@ if (isset($_REQUEST['sellerSubmitBtn'])) {
     // $se_img_temp = $_FILES['se_img']['tmp_name'];
     // $img_folder = "../image/sellerimg/" . $se_img;
     // move_uploaded_file($pr_img_temp, $img_folder);
-    $img_folder = "../image/constseller.png";
+    $img_folder = "../image/constimage.jpg";
 
 
     $sql = " INSERT INTO seller(se_fname, se_lname, se_email,se_number, se_password,se_img) 

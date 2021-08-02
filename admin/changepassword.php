@@ -2,6 +2,27 @@
 include("dashboard/session.inc.php");
 include("dashboard/header.inc.php");
 include("dashboard/sidepane.inc.php");
+include_once('../dbconnection.php');
+
+if (isset($_REQUEST['passwordUpdateBtn'])) {
+  if (($_REQUEST['inputnewpassword'] == "")) {
+    $passmsg = '<div class="alert alert-warning col-sm-6 ml-5" role="status"> Fill All Field </div>';
+  } else {
+    $adminEmail = $_SESSION['adminEmail'];
+    $sql = "SELECT * FROM administration WHERE admin_email ='$adminEmail'";
+    // echo $sql;
+    $result = $conn->query($sql);
+    if ($result->num_rows == 1) {
+      $admin_password = $_REQUEST['inputnewpassword'];
+      $sql = "UPDATE administration SET admin_password='$admin_password' WHERE admin_email='$adminEmail'";
+      if ($conn->query($sql) == TRUE) {
+        $passmsg = '<div class="alert alert-warning col-sm-6 ml-5" role="status">Update Successful</div>';
+      } else {
+        $passmsg = '<div class="alert alert-warning col-sm-6 ml-5" role="status"> Unable to update</div>';
+      }
+    }
+  }
+}
 ?>
 <!-- Body Starts -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -23,22 +44,18 @@ include("dashboard/sidepane.inc.php");
         <div class="row">
           <div class="col-lg-6">
             <div class="m-2 p-2">
-              <form action="" method="POST" enctype="multipart/form-data">
+              <form action="" method="POST">
+              <div class="form-group">
+            <lable for="admin_email">Email</lable>
+            <input type="email" class="form-control" id="admin_email" name ="admin_email" value="<?php echo $_SESSION['adminEmail'] ?>" readonly>
+          </div>
                 <div class="form-group mb-3">
-                  <label for="product_name">Old Password</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="product_desc">Re-Enter Old Password</label>
-                  <input type="text" class="form-control" id="product_desc" name="product_desc" row="2">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="product_quantity">New Password</label>
-                  <input type="text" class="form-control" id="product_quantity" name="product_quantity">
+                  <label for="inputnewpassword">New Password</label>
+                  <input type="text" class="form-control" id="inputnewpassword" name="inputnewpassword">
                 </div>
                 <div class="text_center my-3">
-                  <button type="submit" class="btn btn-danger" id="productSubmitBtn" name="productSubmitBtn">Submit</button>
-                  <a href="products.php" class="btn btn-secondary">Close</a>
+                  <button type="submit" class="btn btn-danger" id="passwordUpdateBtn" name="passwordUpdateBtn">Submit</button>
+                  <button type="reset" class="btn btn-i">Reset</button>
                 </div>
               </form>
             </div>

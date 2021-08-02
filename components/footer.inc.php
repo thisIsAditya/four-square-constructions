@@ -1,30 +1,27 @@
 <footer>
-    <div class="footer-1 py-5">
+    <div class="footer-1 pt-3">
         <div class="container">
             <div class="row ">
                 <div class="col-lg-4">
-                    <div class="mx-1 p-3 footer-box">
-                        <h3 class="text-center">Contact Us</h3>
-                        <form>
-                            <div class="form-group">
-                                <label>Name : </label>
-                                <input type="text" name="name" class="form-control">
-                            </div><br>
-
-                            <div class="form-group">
-                                <label>E-mail : </label>
-                                <input type="text" name="email" class="form-control">
-                            </div><br>
-
-                            <div class="form-group">
-                                <label>Comments</label><br>
-                                <textarea placeholder="Write here..." name="comment" class="form-control" ></textarea>
-                            </div><br>
-
-                            <div class="form-group">
-                                <input type="submit" name="submit" value="Submit" class="btn btn-success">
-                            </div><br>
-                        </form>
+                    <div class="mx-1 p-3 pb-0 footer-box">
+                        <h3 class="text-center">Sitemap</h3>
+                        <ul>
+                            <a href="index.php">
+                                <li>Home</li>
+                            </a>
+                            <a href="product.php">
+                                <li>Shop</li>
+                            </a>
+                            <a href="about.php">
+                                <li>About Us</li>
+                            </a>
+                            <a href="contact.php">
+                                <li>Contact Us</li>
+                            </a>
+                            <a href="privacypolicy.php">
+                                <li>Privacy Policy</li>
+                            </a>
+                        </ul>
                     </div>
                 </div>
 
@@ -37,17 +34,11 @@
                         <a href="#" class="fa fa-google"></a>
                         <a href="#" class="fa fa-linkedin"></a> 
                     </div>
-
-                    <div class="mx-1 p-3 text-center footer-box">
-                        <h3>Sitemap</h3>
-                        
-                    </div>
                 </div>
             
                 <div class="col-lg-4">
-                    <div class="mx-1 p-3 footer-box">
-                        <h3 class="text-center mb-4">About Us</h3>
-                        <p class="h1 p-3 text-center"><strong>4<sup>2</sup></strong> Constructions</p>
+                    <div class="mx-1 p-3 pb-0 footer-box">
+                        <h3 class="text-center mb-4">Address</h3>
                         <address class="p-2 mt-4">
                             BCA-VI<sup>th</sup> Semester,<br>
                             School of Management Sciences,<br>
